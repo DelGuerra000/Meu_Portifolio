@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "../data/projects";
+import { Project } from "../types/project";
 
 interface ProjectCardProps {
     project: Project;
@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         >
             <div className="relative h-64 w-full overflow-hidden shrink-0">
                 <Image
-                    src={project.image}
+                    src={project.images[0]}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.title}
                 </h3>
                 <p className="text-gray-400 text-base mb-6 line-clamp-3 leading-relaxed font-light">
-                    {project.shortDescription}
+                    {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-3 justify-center mt-auto">

@@ -49,7 +49,7 @@ export default function ProjectCarousel() {
             >
                 {projects.map((project) => (
                     <div
-                        key={project.id}
+                        key={project.slug}
                         className="flex-none w-[85vw] md:w-[450px] snap-center"
                     >
                         <ProjectCard project={project} />
